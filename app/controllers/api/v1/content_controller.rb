@@ -18,7 +18,7 @@ class Api::V1::ContentController < ApplicationController
     content = Content.new(
       title: create_content_params[:title],
       body: create_content_params[:body],
-      summary: create_content_params[:status],
+      summary: create_content_params[:summary],
       published_at: Time.now,
       meta_description: create_content_params[:meta_description],
       meta_keywords: create_content_params[:meta_keywords],
@@ -29,7 +29,7 @@ class Api::V1::ContentController < ApplicationController
     if content.save
       render json: {message:"Content Created Successfully !!"}
     else
-      render json: {message:"Error"}
+      render json: {errors: content.errors.full_messages,ststus:404}
     end
     
   end
