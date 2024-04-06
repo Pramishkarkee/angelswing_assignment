@@ -1,0 +1,361 @@
+{
+	"info": {
+		"_postman_id": "0a403f54-75c6-4c04-be43-a8a7b70d61ef",
+		"name": "ruby api assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12358244"
+	},
+	"item": [
+		{
+			"name": "get user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE3MTI1OTQzMzR9.yng7-5DmikpV8NWrbmSiHDX9xpJ0sLZ9uKAe78rjpAQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/v1/users/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user[email]",
+							"value": "admin@admin.com",
+							"type": "text"
+						},
+						{
+							"key": "user[name]",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "user[password]",
+							"value": "admin123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					],
+					"query": [
+						{
+							"key": "user[name]",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "user[email]",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update content",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE3MTI1OTQzMzR9.yng7-5DmikpV8NWrbmSiHDX9xpJ0sLZ9uKAe78rjpAQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "content[title]",
+							"value": "this is new title",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/v1/content/4",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"content",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete content",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE3MTI1OTQzMzR9.yng7-5DmikpV8NWrbmSiHDX9xpJ0sLZ9uKAe78rjpAQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/v1/content/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"content",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get content",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE3MTI1OTQzMzR9.yng7-5DmikpV8NWrbmSiHDX9xpJ0sLZ9uKAe78rjpAQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/v1/content/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"content",
+						"2"
+					],
+					"query": [
+						{
+							"key": "A",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list content",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE3MTI1OTQzMzR9.yng7-5DmikpV8NWrbmSiHDX9xpJ0sLZ9uKAe78rjpAQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/v1/content",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"content"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create content",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE3MTI1OTQzMzR9.yng7-5DmikpV8NWrbmSiHDX9xpJ0sLZ9uKAe78rjpAQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "content[title]",
+							"value": "This is content title",
+							"type": "text"
+						},
+						{
+							"key": "content[summary]",
+							"value": "This is summary of content",
+							"type": "text"
+						},
+						{
+							"key": "content[slug]",
+							"value": "hello-world",
+							"type": "text"
+						},
+						{
+							"key": "content[body]",
+							"value": "This is content body",
+							"type": "text"
+						},
+						{
+							"key": "content[category]",
+							"value": "TECHNOLOGY",
+							"type": "text"
+						},
+						{
+							"key": "content[meta_description]",
+							"value": "mete",
+							"type": "text"
+						},
+						{
+							"key": "content[meta_keywords]",
+							"value": "ruby,rails,etx",
+							"type": "text"
+						},
+						{
+							"key": "content[status]",
+							"value": "PUBLISH",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/v1/content",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"content"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user[email]",
+							"value": "pramishk@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "user[name]",
+							"value": "pramish karki",
+							"type": "default",
+							"disabled": true
+						},
+						{
+							"key": "user[password]",
+							"value": "admin123",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/api/v1/auth",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

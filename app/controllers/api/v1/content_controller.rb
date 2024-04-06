@@ -1,5 +1,5 @@
 class Api::V1::ContentController < ApplicationController
-  before_action :authentication, only: [:create, :update, :destroy]
+  before_action :authentication, only: [:create, :update, :destroy, :index]
   def index
     contents = Content.all
     render json: contents, status:200
@@ -36,14 +36,18 @@ class Api::V1::ContentController < ApplicationController
 
   def update
     content = Content.find_by(id:params[:id])
-    if authorized_user?(content.author.id)
-      if content.update(create_content_params)
-        render json: content
+    if content
+      if authorized_user?(content.author.id)
+        if content.update(create_content_params)
+          render json: content
+        else
+          render json: { error: user.errors.full_messages }, status: :unprocessable_entity
+        end
       else
-        render json: { error: user.errors.full_messages }, status: :unprocessable_entity
+        render json: {message:"You are not authorized to update this content."},status: :unauthorized
       end
     else
-      render json: {message:"You are not authorized to update this content."},status: :unauthorized
+      render json: {error:"Not Found"},status:404
     end
   end
 

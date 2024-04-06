@@ -5,7 +5,8 @@ class User < ApplicationRecord
     validates :password, presence: true, length: { minimum: 6 }
     has_secure_password
     def generate_jwt
-        payload = { user_id: id }
-        JWT.encode(payload, Rails.application.secrets.secret_key_base, 'HS256')
+        expire_time = Time.now.to_i + 3600*48
+        payload = { user_id: id, exp: expire_time }
+        JWT.encode(payload,ENV['APP_SECRET_KEY'],'HS256')
     end
 end

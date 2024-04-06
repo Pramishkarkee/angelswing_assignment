@@ -10,6 +10,8 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def create
+    # todo password validation
+    # todo email validation
     user = User.new(user_params)
     if user.save
       render json: {message: 'User Register successfully',status:200}
