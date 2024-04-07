@@ -1,25 +1,90 @@
-# README
+### Setup Guide for Ruby on Rails Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README provides a step-by-step guide to set up a Ruby on Rails project, including database migrations, installation of dependencies, running the application, and executing tests.
 
-Things you may want to cover:
+#### 1. Install Ruby and Rails
 
-* Ruby version
+- Ruby: Download and install Ruby from [here](https://www.ruby-lang.org/en/downloads/).
+- Rails: Install Rails by running the following command in your terminal:
 
-* System dependencies
+```bash
+gem install rails
+```
 
-* Configuration
+#### 2. Clone Project Repository
 
-* Database creation
+- Clone the project repository from GitHub:
 
-* Database initialization
+```bash
+git clone <repository-url>
+```
 
-* How to run the test suite
+#### 3. Navigate to Project Directory
 
-* Services (job queues, cache servers, search engines, etc.)
+- Open your terminal and navigate to the project directory:
 
-* Deployment instructions
+```bash
+cd project-directory
+```
 
-* ...
-# angelswing_assignment
+#### 4. Database Migration
+
+- Run the following command to create the database schema:
+
+```bash
+rails db:migrate
+```
+
+This will execute any pending migrations and update the database schema accordingly.
+
+#### 5. Install Project Dependencies
+
+- Install project dependencies using Bundler:
+
+```bash
+bundle install
+```
+
+#### 6. Seed Database (Optional)
+
+- If the project includes seed data, you can populate the database by running:
+
+```bash
+rails db:seed
+```
+
+This command will execute the seed file(s) defined in `db/seeds.rb`.
+
+#### 7. Run the Application
+
+- Start the Rails server by running:
+
+```bash
+rails s
+```
+
+This will start the server on port 3000 by default. You can access the application by visiting `http://localhost:3000` in your web browser.
+
+#### 8. Running Tests
+
+- For running all tests, use the following command:
+
+```bash
+rspec
+```
+
+- For running tests in a specific file or directory, use:
+
+```bash
+rspec spec/**/**
+```
+
+This command will execute all RSpec tests recursively within the `spec` directory.
+
+#### Additional Notes
+
+- Make sure to update the `config/database.yml` file with your database credentials if necessary.
+- Ensure that your system meets the prerequisites mentioned in the project documentation.
+- For any further assistance or issues, feel free to contact the project maintainers.
+
+With these steps, you should be able to set up, run, and test the Ruby on Rails project successfully. If you encounter any problems during setup or execution, please refer to the project documentation or contact the project maintainers for support.
