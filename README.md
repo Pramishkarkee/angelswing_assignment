@@ -81,6 +81,9 @@ rspec spec/**/**
 
 This command will execute all RSpec tests recursively within the `spec` directory.
 
+#### 9. Postman Json File Location
+-ruby api assignment.postman_collection.json
+
 #### Additional Notes
 
 - Make sure to update the `config/database.yml` file with your database credentials if necessary.
