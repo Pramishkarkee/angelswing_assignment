@@ -1,5 +1,5 @@
 class Api::V1::ContentController < ApplicationController
-  before_action :authentication, only: [:create, :update, :destroy, :index]
+  before_action :authentication, only: [:create, :update, :destroy, :index,:show]
   def index
     contents = Content.all
     render json: contents, status:200
@@ -10,7 +10,7 @@ class Api::V1::ContentController < ApplicationController
     if content
       render json:content, status:200
     else
-      render json: {error: "Not Found"}
+      render json: {error: "Not Found"} , status: :not_found
     end
   end
 
@@ -29,7 +29,7 @@ class Api::V1::ContentController < ApplicationController
     if content.save
       render json: {message:"Content Created Successfully !!"}
     else
-      render json: {errors: content.errors.full_messages,ststus:404}
+      render json: {errors: content.errors.full_messages}, status: :unprocessable_entity
     end
     
   end
