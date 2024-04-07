@@ -87,4 +87,4 @@ This command will execute all RSpec tests recursively within the `spec` director
 - Ensure that your system meets the prerequisites mentioned in the project documentation.
 - For any further assistance or issues, feel free to contact the project maintainers.
 
-With these steps, you should be able to set up, run, and test the Ruby on Rails project successfully. If you encounter any problems during setup or execution, please refer to the project documentation or contact the project maintainers for support.
+With these steps, you should be able to set up, run, and test the Ruby on Rails project successfully. 
